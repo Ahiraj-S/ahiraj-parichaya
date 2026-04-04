@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=860"/>
 <title>Ahiraj S — Biodata</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -13,7 +13,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   color: #F0EAE0;
   min-height: 100vh;
-  padding: 12px;
+  padding: 32px 20px;
 }
 
 .page { max-width: 860px; margin: 0 auto; }
@@ -21,8 +21,8 @@ body {
 /* ── HERO ── */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 240px;
-  min-height: 300px;
+  grid-template-columns: 1fr 280px;
+  min-height: 340px;
   margin-bottom: 2px;
   gap: 2px;
 }
@@ -231,77 +231,7 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 10px; margin-to
 
 input[type="file"] { display: none; }
 
-/* ═══════════════════════════════
-   MOBILE  ≤ 600px
-═══════════════════════════════ */
-@media (max-width: 600px) {
 
-  body { padding: 0; }
-  .page { gap: 0; }
-
-  /* Hero stacks: photo on top, info below */
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: unset;
-  }
-
-  .hero-left {
-    padding: 28px 20px 32px;
-    order: 2;
-  }
-  .hero-left::before { font-size: 70px; }
-
-  .hero-name { font-size: 38px; }
-  .hero-sub { font-size: 10px; margin-bottom: 16px; }
-
-  /* Photo on top */
-  .hero-right { order: 1; flex-direction: row; height: 220px; }
-  .photo-box { flex: 1; min-height: unset; height: 100%; }
-  .vitals {
-    width: 130px; flex-shrink: 0;
-    border-top: none; border-left: 1px solid #2A2A2A;
-    padding: 12px 10px;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .vital-key { font-size: 8px; }
-  .vital-val { font-size: 10.5px; }
-
-  /* About */
-  .about-band { padding: 22px 18px; }
-  .about-band blockquote { font-size: 14px; }
-
-  /* 3-col → 1-col */
-  .grid-body { grid-template-columns: 1fr; }
-  .block { padding: 20px 18px; }
-
-  /* Gallery taller on mobile */
-  .gallery-row { height: 180px; }
-
-  /* Wide row → 1-col */
-  .wide-row { grid-template-columns: 1fr; }
-
-  /* Expectations stacks */
-  .expect-band {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 24px 18px;
-  }
-  .expect-label { font-size: 22px; }
-  .expect-body { border-top: none; padding-top: 0; font-size: 13px; }
-
-  .footer-band { padding: 14px 18px; }
-  .footer-name { font-size: 13px; }
-}
-
-/* ═══════════════════════════════
-   TABLET  601–860px
-═══════════════════════════════ */
-@media (min-width: 601px) and (max-width: 860px) {
-  .hero { grid-template-columns: 1fr 200px; }
-  .hero-name { font-size: 40px; }
-  .grid-body { grid-template-columns: 1fr 1fr; }
-  .grid-body .block:last-child { grid-column: 1 / -1; }
-}
 
 @media print {
   body { background: white; padding: 0; }
