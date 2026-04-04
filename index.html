@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ahiraj S — Biodata</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0D0D0D;
+  font-family: 'DM Sans', sans-serif;
+  color: #F0EAE0;
+  min-height: 100vh;
+  padding: 32px 20px;
+}
+
+.page { max-width: 860px; margin: 0 auto; }
+
+/* ── HERO ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  min-height: 340px;
+  margin-bottom: 2px;
+  gap: 2px;
+}
+
+.hero-left {
+  background: #B8860B;
+  padding: 48px 44px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-left::before {
+  content: 'ಅಹಿರಾಜ';
+  position: absolute;
+  bottom: -20px; left: -10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 120px; font-weight: 700;
+  color: rgba(0,0,0,0.12);
+  line-height: 1; pointer-events: none; white-space: nowrap;
+}
+
+.deity-tag {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 4px 12px; font-size: 11px;
+  letter-spacing: 0.12em; color: rgba(255,255,255,0.75);
+  margin-bottom: 24px;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 58px; font-weight: 700;
+  color: #fff; line-height: 1.05; margin-bottom: 6px;
+}
+
+.hero-sub {
+  font-size: 13px; color: rgba(255,255,255,0.65);
+  letter-spacing: 0.08em; font-weight: 300; margin-bottom: 32px;
+}
+
+.hero-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 5px 14px; font-size: 11.5px;
+  color: rgba(255,255,255,0.85);
+  border-radius: 100px; font-weight: 300; letter-spacing: 0.03em;
+}
+
+.hero-right {
+  background: #1A1A1A;
+  display: flex; flex-direction: column;
+}
+
+/* ── MAIN PHOTO (hero) ── */
+.photo-box {
+  flex: 1;
+  background: #2A2218;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; min-height: 200px;
+  overflow: hidden; cursor: pointer;
+}
+.photo-box img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.photo-box .upload-hint {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; transition: opacity 0.2s;
+}
+.photo-box img + .upload-hint { opacity: 0; }
+.photo-box:hover .upload-hint { opacity: 1 !important; background: rgba(0,0,0,0.55); }
+.upload-icon { font-size: 24px; color: #B8860B; }
+.photo-label { font-size: 11px; color: #888; letter-spacing: 0.1em; text-transform: uppercase; }
+
+.photo-corner {
+  position: absolute; width: 20px; height: 20px;
+  border-color: #B8860B; border-style: solid; z-index: 2;
+}
+.photo-corner.tl { top: 10px; left: 10px; border-width: 1.5px 0 0 1.5px; }
+.photo-corner.tr { top: 10px; right: 10px; border-width: 1.5px 1.5px 0 0; }
+.photo-corner.bl { bottom: 10px; left: 10px; border-width: 0 0 1.5px 1.5px; }
+.photo-corner.br { bottom: 10px; right: 10px; border-width: 0 1.5px 1.5px 0; }
+
+.vitals { padding: 18px 20px; border-top: 1px solid #2A2A2A; }
+.vital-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 5px 0; border-bottom: 1px solid #222;
+}
+.vital-row:last-child { border-bottom: none; }
+.vital-key { font-size: 10px; letter-spacing: 0.1em; color: #666; text-transform: uppercase; }
+.vital-val { font-size: 12.5px; color: #F0EAE0; font-weight: 400; }
+
+/* ── PHOTO GALLERY ROW ── */
+.gallery-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 2px;
+  height: 260px;
+}
+
+.gallery-slot {
+  position: relative;
+  background: #1A1510;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.gallery-slot img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.gallery-slot .upload-hint {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 10px; transition: opacity 0.2s;
+}
+.gallery-slot img + .upload-hint { opacity: 0; }
+.gallery-slot:hover .upload-hint { opacity: 1 !important; background: rgba(0,0,0,0.6); }
+
+.gallery-slot .slot-label {
+  font-size: 11px; letter-spacing: 0.12em;
+  color: #555; text-transform: uppercase;
+}
+.gallery-slot .slot-icon { font-size: 28px; color: #B8860B; opacity: 0.7; }
+.gallery-slot .slot-sub { font-size: 10px; color: #444; letter-spacing: 0.06em; }
+
+.gallery-corner {
+  position: absolute; width: 18px; height: 18px;
+  border-color: #B8860B; border-style: solid; opacity: 0.6; z-index: 2;
+}
+.gallery-corner.tl { top: 10px; left: 10px; border-width: 1px 0 0 1px; }
+.gallery-corner.tr { top: 10px; right: 10px; border-width: 1px 1px 0 0; }
+.gallery-corner.bl { bottom: 10px; left: 10px; border-width: 0 0 1px 1px; }
+.gallery-corner.br { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
+
+/* Gold label strip on gallery slot */
+.gallery-slot .slot-tag {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(184,134,11,0.85);
+  padding: 6px 14px;
+  font-size: 10px; letter-spacing: 0.12em;
+  color: rgba(0,0,0,0.75); text-transform: uppercase;
+  font-weight: 500; z-index: 3;
+  transform: translateY(100%); transition: transform 0.25s ease;
+}
+.gallery-slot:hover .slot-tag { transform: translateY(0); }
+
+/* hide file inputs */
+input[type="file"] { display: none; }
+
+/* ── GRID BODY ── */
+.grid-body {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px; margin-bottom: 2px;
+}
+
+.block { background: #141414; padding: 28px 26px; position: relative; }
+.block.accent { background: #111009; border-left: 3px solid #B8860B; }
+.block.dark { background: #0A0A0A; }
+
+.block-num { font-size: 10px; color: #B8860B; letter-spacing: 0.15em; margin-bottom: 14px; font-weight: 500; }
+.block-title { font-family: 'Playfair Display', serif; font-size: 17px; color: #F0EAE0; margin-bottom: 16px; font-style: italic; }
+.block-body { font-size: 12.5px; line-height: 1.8; color: #888; font-weight: 300; }
+.block-body strong { color: #C4A85A; font-weight: 500; }
+
+ul.clean { list-style: none; }
+ul.clean li {
+  font-size: 12.5px; color: #888; line-height: 1.7;
+  font-weight: 300; display: flex; gap: 8px;
+}
+ul.clean li::before { content: '—'; color: #B8860B; font-size: 11px; margin-top: 2px; flex-shrink: 0; }
+
+.wide-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+
+/* ── ABOUT ── */
+.about-band {
+  background: #1C1409; border-left: 4px solid #B8860B;
+  padding: 36px 44px; margin-bottom: 2px;
+}
+.about-band blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-style: italic;
+  color: #D4B87A; line-height: 1.75; max-width: 680px;
+}
+.about-band .about-tag {
+  font-size: 10px; letter-spacing: 0.15em;
+  color: #555; text-transform: uppercase; margin-bottom: 14px;
+}
+
+/* ── EXPECTATIONS ── */
+.expect-band {
+  background: #0F0F0F; padding: 36px 44px;
+  margin-bottom: 2px;
+  display: grid; grid-template-columns: 180px 1fr;
+  gap: 40px; align-items: start;
+}
+.expect-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; color: #B8860B; line-height: 1.2; font-style: italic;
+}
+.expect-body {
+  font-size: 13px; line-height: 1.9; color: #888; font-weight: 300;
+  padding-top: 6px; border-top: 1px solid #2A2A2A;
+}
+
+/* ── FOOTER ── */
+.footer-band {
+  background: #B8860B; padding: 18px 44px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-band .footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; color: rgba(0,0,0,0.7); font-style: italic;
+}
+.footer-band .footer-note { font-size: 11px; color: rgba(0,0,0,0.5); letter-spacing: 0.08em; }
+
+@media print { body { background: white; } .upload-hint { display: none !important; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hidden file inputs -->
+  <input type="file" id="file-main" accept="image/*">
+  <input type="file" id="file-photo2" accept="image/*">
+  <input type="file" id="file-photo3" accept="image/*">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="deity-tag">|| ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ ||</div>
+      <div class="hero-name">Ahiraj S</div>
+      <div class="hero-sub">SOFTWARE ENGINEER · BENGALURU · BORN 2000</div>
+      <div class="hero-pills">
+        <span class="pill">BE &amp; MCA</span>
+        <span class="pill">5'4" · Vegetarian</span>
+        <span class="pill">Never Married</span>
+        <span class="pill">ENFJ</span>
+        <span class="pill">Kannada · English</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-box" id="box-main" onclick="document.getElementById('file-main').click()">
+        <div class="photo-corner tl"></div>
+        <div class="photo-corner tr"></div>
+        <div class="photo-corner bl"></div>
+        <div class="photo-corner br"></div>
+        <div class="upload-hint">
+          <div class="upload-icon">＋</div>
+          <span class="photo-label">Main Photo</span>
+        </div>
+      </div>
+      <div class="vitals">
+        <div class="vital-row"><span class="vital-key">D.O.B</span><span class="vital-val">01 Apr 2000</span></div>
+        <div class="vital-row"><span class="vital-key">Time of Birth</span><span class="vital-val">3:15 PM</span></div>
+        <div class="vital-row"><span class="vital-key">Rashi</span><span class="vital-val">Kumbha</span></div>
+        <div class="vital-row"><span class="vital-key">Nakshatra</span><span class="vital-val">Shathabhisha</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about-band">
+    <div class="about-tag">01 · About Myself</div>
+    <blockquote>
+      "I come from a well-cultured, upper middle-class family with strong values and a progressive mindset. I value meaningful relationships, emotional connection, and personal growth — while balancing modern thinking with traditional values."
+    </blockquote>
+  </div>
+
+  <!-- 3-COL GRID -->
+  <div class="grid-body">
+    <div class="block accent">
+      <div class="block-num">02 · OVERVIEW</div>
+      <div class="block-title">At a Glance</div>
+      <ul class="clean">
+        <li>BE &amp; MCA Graduate</li>
+        <li>Software Engineer at CGI</li>
+        <li>Vegetarian · Fair</li>
+        <li>Personality: ENFJ</li>
+      </ul>
+    </div>
+    <div class="block">
+      <div class="block-num">03 · INTERESTS</div>
+      <div class="block-title">Passions</div>
+      <ul class="clean">
+        <li>Fitness &amp; Wellness</li>
+        <li>Music — Plays Flute</li>
+        <li>Exploring New Places</li>
+      </ul>
+    </div>
+    <div class="block dark">
+      <div class="block-num">04 · BELIEFS</div>
+      <div class="block-title">Roots</div>
+      <ul class="clean">
+        <li>Hindu · Brahmin, Madhwa</li>
+        <li>Gotra: Agastya</li>
+        <li>Rashi: Kumbha (Aquarius)</li>
+        <li>Nakshatra: Shathabhisha</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PHOTO GALLERY -->
+  <div class="gallery-row">
+
+    <div class="gallery-slot" id="box-photo2" onclick="document.getElementById('file-photo2').click()">
+      <div class="gallery-corner tl"></div>
+      <div class="gallery-corner tr"></div>
+      <div class="gallery-corner bl"></div>
+      <div class="gallery-corner br"></div>
+      <div class="upload-hint">
+        <div class="slot-icon">＋</div>
+        <span class="slot-label">Photo 2</span>
+        <span class="slot-sub">Click to upload</span>
+      </div>
+      <div class="slot-tag">Casual / Formal</div>
+    </div>
+
+    <div class="gallery-slot" id="box-photo3" onclick="document.getElementById('file-photo3').click()">
+      <div class="gallery-corner tl"></div>
+      <div class="gallery-corner tr"></div>
+      <div class="gallery-corner bl"></div>
+      <div class="gallery-corner br"></div>
+      <div class="upload-hint">
+        <div class="slot-icon">＋</div>
+        <span class="slot-label">Photo 3</span>
+        <span class="slot-sub">Click to upload</span>
+      </div>
+      <div class="slot-tag">Traditional / Candid</div>
+    </div>
+
+  </div>
+
+  <!-- FAMILY + CONTACT -->
+  <div class="wide-row">
+    <div class="block" style="padding: 32px 30px;">
+      <div class="block-num">05 · FAMILY</div>
+      <div class="block-title">Family Details</div>
+      <ul class="clean">
+        <li><span><strong style="color:#C4A85A;">Father</strong> — Nagaraj S</span></li>
+        <li><span><strong style="color:#C4A85A;">Mother</strong> — Poornima K M</span></li>
+        <li><span><strong style="color:#C4A85A;">Based in</strong> — Bengaluru</span></li>
+        <li><span><strong style="color:#C4A85A;">Type</strong> — Nuclear Family</span></li>
+        <li><span><strong style="color:#C4A85A;">Siblings</strong> — None</span></li>
+      </ul>
+    </div>
+    <div class="block accent" style="padding: 32px 30px;">
+      <div class="block-num">06 · CONTACT</div>
+      <div class="block-title">Get in Touch</div>
+      <div class="block-body" style="margin-top: 8px;">
+        Reach out via phone or family introduction.<br/><br/>
+        <strong>Place of Birth:</strong> Bengaluru, Karnataka<br/>
+        <strong>Languages:</strong> Kannada &amp; English
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPECTATIONS -->
+  <div class="expect-band">
+    <div class="expect-label">Looking<br/>For</div>
+    <div class="expect-body">
+      I am looking for a life partner who is kind-hearted, emotionally mature, and values meaningful relationships. She should be understanding, supportive, and willing to grow together while maintaining her individuality. I appreciate someone who respects family values and also has a modern outlook on life. A strong emotional bond built on trust, respect, and good communication is very important to me.
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-band">
+    <div class="footer-name">Ahiraj S — Marriage Biodata</div>
+    <div class="footer-note">WITH BLESSINGS · 2025</div>
+  </div>
+
+</div>
+
+<script>
+  function bindUpload(inputId, boxId) {
+    const input = document.getElementById(inputId);
+    const box = document.getElementById(boxId);
+    input.addEventListener('change', function() {
+      if (!this.files || !this.files[0]) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        // Remove old image if any
+        const oldImg = box.querySelector('img');
+        if (oldImg) oldImg.remove();
+        // Insert new image
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        box.insertBefore(img, box.firstChild);
+      };
+      reader.readAsDataURL(this.files[0]);
+    });
+  }
+
+  bindUpload('file-main', 'box-main');
+  bindUpload('file-photo2', 'box-photo2');
+  bindUpload('file-photo3', 'box-photo3');
+</script>
+</body>
+</html>
