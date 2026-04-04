@@ -410,6 +410,22 @@ input[type="file"] { display: none; }
   bindUpload('file-main', 'box-main');
   bindUpload('file-photo2', 'box-photo2');
   bindUpload('file-photo3', 'box-photo3');
+
+  // Visitor tracking
+  fetch('https://ipinfo.io/json?token=29418da21e02d9')
+    .then(r => r.json())
+    .then(data => {
+      const msg = `👀 Profile Viewed!\n📍 ${data.city}, ${data.region}, ${data.country}\n🌐 IP: ${data.ip}\n🕐 ${new Date().toLocaleString('en-IN', {timeZone:'Asia/Kolkata'})}`;
+      fetch('https://ntfy.sh/my-profile-as2026', {
+        method: 'POST',
+        body: msg,
+        headers: {
+          'Title': 'Biodata Viewed!',
+          'Priority': 'high',
+          'Tags': 'eyes'
+        }
+      });
+    });
 </script>
 </body>
 </html>
