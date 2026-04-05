@@ -34,7 +34,7 @@ body {
 .hero {
   display: grid;
   grid-template-columns: 1fr 280px;
-  min-height: 340px;
+  min-height: 420px;
   margin-bottom: 3px;
   gap: 3px;
 }
@@ -94,21 +94,10 @@ body {
   flex: 1;
   background: #EDE4D3;
   display: flex; align-items: center; justify-content: center;
-  position: relative; min-height: 180px;
+  position: relative; min-height: 340px;
   overflow: hidden; cursor: pointer;
 }
 .photo-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.photo-box .upload-hint {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 8px; transition: opacity 0.2s;
-}
-.photo-box img + .upload-hint { opacity: 0; }
-.photo-box:hover .upload-hint,
-.photo-box:active .upload-hint { opacity: 1 !important; background: rgba(237,228,211,0.85); }
-.upload-icon { font-size: 22px; color: #9A6F2E; }
-.photo-label { font-size: 10px; color: #A08C74; letter-spacing: 0.1em; text-transform: uppercase; }
 
 .photo-corner {
   position: absolute; width: 16px; height: 16px;
@@ -167,7 +156,7 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-to
 /* ── PHOTO GALLERY ── */
 .gallery-row {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 3px; margin-bottom: 3px; height: 220px;
+  gap: 3px; margin-bottom: 3px; height: 420px;
 }
 
 .gallery-slot {
@@ -177,19 +166,6 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-to
   border: 1px solid #D9C9B0;
 }
 .gallery-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gallery-slot .upload-hint {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 8px;
-  transition: opacity 0.2s;
-}
-.gallery-slot img + .upload-hint { opacity: 0; }
-.gallery-slot:hover .upload-hint,
-.gallery-slot:active .upload-hint { opacity: 1 !important; background: rgba(237,228,211,0.88); }
-
-.slot-label { font-size: 10px; letter-spacing: 0.12em; color: #A08C74; text-transform: uppercase; }
-.slot-icon { font-size: 24px; color: #9A6F2E; opacity: 0.7; }
-.slot-sub { font-size: 9px; color: #A08C74; letter-spacing: 0.06em; }
 
 .gallery-corner {
   position: absolute; width: 15px; height: 15px;
@@ -200,17 +176,7 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-to
 .gallery-corner.bl { bottom: 8px; left: 8px; border-width: 0 0 1px 1px; }
 .gallery-corner.br { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
 
-.slot-tag {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: rgba(154,111,46,0.88); padding: 5px 12px;
-  font-size: 9px; letter-spacing: 0.12em;
-  color: #FDF6EC; text-transform: uppercase;
-  font-weight: 500; z-index: 3;
-  transform: translateY(100%); transition: transform 0.25s ease;
-}
-.gallery-slot:hover .slot-tag { transform: translateY(0); }
 
-/* ── WIDE ROW ── */
 .wide-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 3px; }
 
 .block-body { font-size: 14px; line-height: 1.8; color: #6B5640; font-weight: 300; }
@@ -245,7 +211,7 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-to
 }
 .footer-note { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; }
 
-input[type="file"] { display: none; }
+
 
 @media print {
   body { background: white; padding: 0; }
@@ -255,10 +221,6 @@ input[type="file"] { display: none; }
 </head>
 <body>
 <div class="page">
-
-  <input type="file" id="file-main" accept="image/*">
-  <input type="file" id="file-photo2" accept="image/*">
-  <input type="file" id="file-photo3" accept="image/*">
 
   <!-- HERO -->
   <div class="hero">
@@ -276,19 +238,15 @@ input[type="file"] { display: none; }
     </div>
 
     <div class="hero-right">
-      <div class="photo-box" id="box-main" onclick="document.getElementById('file-main').click()">
+      <div class="photo-box">
         <div class="photo-corner tl"></div>
         <div class="photo-corner tr"></div>
         <div class="photo-corner bl"></div>
         <div class="photo-corner br"></div>
-        <div class="upload-hint">
-          <div class="upload-icon">＋</div>
-          <span class="photo-label">Main Photo</span>
-        </div>
+        <img src="photo1.JPG" alt="Ahiraj S" />
       </div>
       <div class="vitals">
         <div class="vital-row"><span class="vital-key">D.O.B</span><span class="vital-val">01 Apr 2000</span></div>
-        <div class="vital-row"><span class="vital-key">Time of Birth</span><span class="vital-val">3:15 PM</span></div>
         <div class="vital-row"><span class="vital-key">Rashi</span><span class="vital-val">Kumbha</span></div>
         <div class="vital-row"><span class="vital-key">Nakshatra</span><span class="vital-val">Shathabhisha</span></div>
       </div>
@@ -338,29 +296,19 @@ input[type="file"] { display: none; }
 
   <!-- PHOTO GALLERY -->
   <div class="gallery-row">
-    <div class="gallery-slot" id="box-photo2" onclick="document.getElementById('file-photo2').click()">
+    <div class="gallery-slot">
       <div class="gallery-corner tl"></div>
       <div class="gallery-corner tr"></div>
       <div class="gallery-corner bl"></div>
       <div class="gallery-corner br"></div>
-      <div class="upload-hint">
-        <div class="slot-icon">＋</div>
-        <span class="slot-label">Photo 2</span>
-        <span class="slot-sub">Tap to upload</span>
-      </div>
-      <div class="slot-tag">Casual / Formal</div>
+      <img src="photo2.jpg" alt="Ahiraj S" />
     </div>
-    <div class="gallery-slot" id="box-photo3" onclick="document.getElementById('file-photo3').click()">
+    <div class="gallery-slot">
       <div class="gallery-corner tl"></div>
       <div class="gallery-corner tr"></div>
       <div class="gallery-corner bl"></div>
       <div class="gallery-corner br"></div>
-      <div class="upload-hint">
-        <div class="slot-icon">＋</div>
-        <span class="slot-label">Photo 3</span>
-        <span class="slot-sub">Tap to upload</span>
-      </div>
-      <div class="slot-tag">Traditional / Candid</div>
+      <img src="photo3.jpeg" alt="Ahiraj S" />
     </div>
   </div>
 
@@ -382,7 +330,6 @@ input[type="file"] { display: none; }
       <div class="block-title">Get in Touch</div>
       <div class="block-body" style="margin-top: 8px;">
         Reach out via phone or family introduction.<br/><br/>
-        <strong>Place of Birth:</strong> Bengaluru, Karnataka<br/>
         <strong>Languages:</strong> Kannada &amp; English
       </div>
     </div>
@@ -405,26 +352,6 @@ input[type="file"] { display: none; }
 </div>
 
 <script>
-  function bindUpload(inputId, boxId) {
-    const input = document.getElementById(inputId);
-    const box = document.getElementById(boxId);
-    input.addEventListener('change', function() {
-      if (!this.files || !this.files[0]) return;
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const oldImg = box.querySelector('img');
-        if (oldImg) oldImg.remove();
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        box.insertBefore(img, box.firstChild);
-      };
-      reader.readAsDataURL(this.files[0]);
-    });
-  }
-  bindUpload('file-main', 'box-main');
-  bindUpload('file-photo2', 'box-photo2');
-  bindUpload('file-photo3', 'box-photo3');
-
   // Visitor tracking
   fetch('https://ipinfo.io/json?token=29418da21e02d9')
     .then(r => r.json())
