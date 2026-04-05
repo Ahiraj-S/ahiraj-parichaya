@@ -9,21 +9,21 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* ── CREAM PALETTE ──
-   bg page:      #F5EFE4  warm parchment
-   bg card:      #FAF6EF  lighter cream
-   bg alt:       #EDE4D3  slightly deeper cream
-   accent gold:  #9A6F2E  deep warm gold (readable on cream)
+   bg page:      #FFF3D4  warm parchment
+   bg card:      #FFFBF0  lighter cream
+   bg alt:       #FFF3D4  slightly deeper cream
+   accent gold:  #B8860B  deep warm gold (readable on cream)
    accent red:   #8B3A2A  deep terracotta
-   text dark:    #2C1F0E  near-black warm brown
-   text mid:     #6B5640  medium warm brown
-   text muted:   #A08C74  muted tan
-   border:       #D9C9B0  soft warm border
+   text dark:    #3D2800  near-black warm brown
+   text mid:     #5C3D00  medium warm brown
+   text muted:   #8C7840  muted tan
+   border:       #E8D090  soft warm border
 */
 
 body {
-  background: #EDE4D3;
+  background: #FFF3D4;
   font-family: 'DM Sans', sans-serif;
-  color: #2C1F0E;
+  color: #3D2800;
   min-height: 100vh;
   padding: 32px 20px;
 }
@@ -84,15 +84,15 @@ body {
 }
 
 .hero-right {
-  background: #FAF6EF;
+  background: #FFFBF0;
   display: flex; flex-direction: column;
-  border: 1px solid #D9C9B0;
+  border: 1px solid #E8D090;
 }
 
 /* ── MAIN PHOTO ── */
 .photo-box {
   flex: 1;
-  background: #EDE4D3;
+  background: #FFF3D4;
   display: flex; align-items: center; justify-content: center;
   position: relative; min-height: 340px;
   overflow: hidden; cursor: pointer;
@@ -101,36 +101,36 @@ body {
 
 .photo-corner {
   position: absolute; width: 16px; height: 16px;
-  border-color: #9A6F2E; border-style: solid; z-index: 2;
+  border-color: #B8860B; border-style: solid; z-index: 2;
 }
 .photo-corner.tl { top: 8px; left: 8px; border-width: 1.5px 0 0 1.5px; }
 .photo-corner.tr { top: 8px; right: 8px; border-width: 1.5px 1.5px 0 0; }
 .photo-corner.bl { bottom: 8px; left: 8px; border-width: 0 0 1.5px 1.5px; }
 .photo-corner.br { bottom: 8px; right: 8px; border-width: 0 1.5px 1.5px 0; }
 
-.vitals { padding: 14px 16px; border-top: 1px solid #D9C9B0; }
+.vitals { padding: 14px 16px; border-top: 1px solid #E8D090; }
 .vital-row {
   display: flex; justify-content: space-between; align-items: baseline;
-  padding: 4px 0; border-bottom: 1px solid #EDE4D3;
+  padding: 4px 0; border-bottom: 1px solid #FFF3D4;
 }
 .vital-row:last-child { border-bottom: none; }
-.vital-key { font-size: 11px; letter-spacing: 0.1em; color: #A08C74; text-transform: uppercase; }
-.vital-val { font-size: 14px; color: #2C1F0E; font-weight: 400; }
+.vital-key { font-size: 11px; letter-spacing: 0.1em; color: #8C7840; text-transform: uppercase; }
+.vital-val { font-size: 14px; color: #3D2800; font-weight: 400; }
 
 /* ── ABOUT ── */
 .about-band {
-  background: #FAF6EF; border-left: 4px solid #B8860B;
+  background: #FFFBF0; border-left: 4px solid #B8860B;
   padding: 28px 28px; margin-bottom: 3px;
-  border: 1px solid #D9C9B0; border-left: 4px solid #B8860B;
+  border: 1px solid #E8D090; border-left: 4px solid #B8860B;
 }
 .about-band blockquote {
   font-family: 'Playfair Display', serif;
   font-size: 19px; font-style: italic;
-  color: #6B5640; line-height: 1.75;
+  color: #5C3D00; line-height: 1.75;
 }
 .about-tag {
   font-size: 12px; letter-spacing: 0.15em;
-  color: #A08C74; text-transform: uppercase; margin-bottom: 12px;
+  color: #B8860B; text-transform: uppercase; margin-bottom: 12px;
 }
 
 /* ── GRID BODY ── */
@@ -139,16 +139,16 @@ body {
   gap: 3px; margin-bottom: 3px;
 }
 
-.block { background: #FAF6EF; padding: 22px 20px; border: 1px solid #D9C9B0; }
-.block.accent { background: #F5EFE4; border-left: 3px solid #B8860B; }
-.block.dark { background: #EDE4D3; }
+.block { background: #FFFBF0; padding: 22px 20px; border: 1px solid #E8D090; }
+.block.accent { background: #FFF3D4; border-left: 3px solid #B8860B; }
+.block.dark { background: #FFF3D4; }
 
 .block-num { font-size: 11px; color: #B8860B; letter-spacing: 0.15em; margin-bottom: 10px; font-weight: 500; }
-.block-title { font-family: 'Playfair Display', serif; font-size: 18px; color: #2C1F0E; margin-bottom: 12px; font-style: italic; }
+.block-title { font-family: 'Playfair Display', serif; font-size: 18px; color: #3D2800; margin-bottom: 12px; font-style: italic; }
 
 ul.clean { list-style: none; }
 ul.clean li {
-  font-size: 14px; color: #6B5640; line-height: 1.8;
+  font-size: 14px; color: #5C3D00; line-height: 1.8;
   font-weight: 300; display: flex; gap: 7px;
 }
 ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-top: 2px; flex-shrink: 0; }
@@ -160,16 +160,16 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-to
 }
 
 .gallery-slot {
-  position: relative; background: #EDE4D3;
+  position: relative; background: #FFF3D4;
   overflow: hidden; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  border: 1px solid #D9C9B0;
+  border: 1px solid #E8D090;
 }
 .gallery-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .gallery-corner {
   position: absolute; width: 15px; height: 15px;
-  border-color: #9A6F2E; border-style: solid; opacity: 0.5; z-index: 2;
+  border-color: #B8860B; border-style: solid; opacity: 0.5; z-index: 2;
 }
 .gallery-corner.tl { top: 8px; left: 8px; border-width: 1px 0 0 1px; }
 .gallery-corner.tr { top: 8px; right: 8px; border-width: 1px 1px 0 0; }
@@ -179,24 +179,24 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-to
 
 .wide-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 3px; }
 
-.block-body { font-size: 14px; line-height: 1.8; color: #6B5640; font-weight: 300; }
-.block-body strong { color: #9A6F2E; font-weight: 500; }
+.block-body { font-size: 14px; line-height: 1.8; color: #5C3D00; font-weight: 300; }
+.block-body strong { color: #B8860B; font-weight: 500; }
 
 /* ── EXPECTATIONS ── */
 .expect-band {
-  background: #F5EFE4; padding: 28px 28px;
+  background: #FFF3D4; padding: 28px 28px;
   margin-bottom: 3px;
   display: grid; grid-template-columns: 140px 1fr;
   gap: 28px; align-items: start;
-  border: 1px solid #D9C9B0;
+  border: 1px solid #E8D090;
 }
 .expect-label {
   font-family: 'Playfair Display', serif;
-  font-size: 30px; color: #9A6F2E; line-height: 1.2; font-style: italic;
+  font-size: 30px; color: #B8860B; line-height: 1.2; font-style: italic;
 }
 .expect-body {
-  font-size: 14px; line-height: 1.9; color: #6B5640; font-weight: 300;
-  padding-top: 6px; border-top: 1px solid #D9C9B0;
+  font-size: 14px; line-height: 1.9; color: #5C3D00; font-weight: 300;
+  padding-top: 6px; border-top: 1px solid #E8D090;
 }
 
 /* ── FOOTER ── */
@@ -321,19 +321,18 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-to
       <div class="block-num">05 · FAMILY</div>
       <div class="block-title">Family Details</div>
       <ul class="clean">
-        <li><span><strong style="color:#9A6F2E;">Father</strong> — Nagaraj S</span></li>
-        <li><span><strong style="color:#9A6F2E;">Mother</strong> — Poornima K M</span></li>
-        <li><span><strong style="color:#9A6F2E;">Based in</strong> — Bengaluru</span></li>
-        <li><span><strong style="color:#9A6F2E;">Type</strong> — Nuclear Family</span></li>
-        <li><span><strong style="color:#9A6F2E;">Siblings</strong> — None</span></li>
+        <li><span><strong style="color:#B8860B;">Father</strong> — Nagaraj S</span></li>
+        <li><span><strong style="color:#B8860B;">Mother</strong> — Poornima K M</span></li>
+        <li><span><strong style="color:#B8860B;">Based in</strong> — Bengaluru</span></li>
+        <li><span><strong style="color:#B8860B;">Type</strong> — Nuclear Family</span></li>
+        <li><span><strong style="color:#B8860B;">Siblings</strong> — None</span></li>
       </ul>
     </div>
     <div class="block accent" style="padding: 24px 20px;">
-      <div class="block-num">06 · CONTACT</div>
-      <div class="block-title">Get in Touch</div>
+      <div class="block-num">06 · ON MARRIAGE</div>
+      <div class="block-title">My View</div>
       <div class="block-body" style="margin-top: 8px;">
-        Reach out via phone or family introduction.<br/><br/>
-        <strong>Languages:</strong> Kannada &amp; English
+        I believe marriage is a beautiful journey of companionship, understanding, and shared dreams. I look forward to building a life filled with love, respect, and happiness together.
       </div>
     </div>
   </div>
@@ -349,7 +348,7 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-to
   <!-- FOOTER -->
   <div class="footer-band">
     <div class="footer-name">Ahiraj S — Marriage Biodata</div>
-    <div class="footer-note">WITH BLESSINGS · 2025</div>
+    <div class="footer-note">WITH BLESSINGS</div>
   </div>
 
 </div>
