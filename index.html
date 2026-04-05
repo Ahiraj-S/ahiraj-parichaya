@@ -2,16 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=860"/>
+<meta name="viewport" content="width=680"/>
 <title>Ahiraj S — Biodata</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── CREAM PALETTE ──
+   bg page:      #F5EFE4  warm parchment
+   bg card:      #FAF6EF  lighter cream
+   bg alt:       #EDE4D3  slightly deeper cream
+   accent gold:  #9A6F2E  deep warm gold (readable on cream)
+   accent red:   #8B3A2A  deep terracotta
+   text dark:    #2C1F0E  near-black warm brown
+   text mid:     #6B5640  medium warm brown
+   text muted:   #A08C74  muted tan
+   border:       #D9C9B0  soft warm border
+*/
+
 body {
-  background: #0D0D0D;
+  background: #EDE4D3;
   font-family: 'DM Sans', sans-serif;
-  color: #F0EAE0;
+  color: #2C1F0E;
   min-height: 100vh;
   padding: 32px 20px;
 }
@@ -23,8 +35,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 280px;
   min-height: 340px;
-  margin-bottom: 2px;
-  gap: 2px;
+  margin-bottom: 3px;
+  gap: 3px;
 }
 
 .hero-left {
@@ -39,47 +51,48 @@ body {
   bottom: -20px; left: -10px;
   font-family: 'Playfair Display', serif;
   font-size: 100px; font-weight: 700;
-  color: rgba(0,0,0,0.12);
+  color: rgba(255,255,255,0.07);
   line-height: 1; pointer-events: none; white-space: nowrap;
 }
 
 .deity-tag {
   display: inline-block;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.35);
   padding: 4px 12px; font-size: 11px;
-  letter-spacing: 0.1em; color: rgba(255,255,255,0.75);
+  letter-spacing: 0.1em; color: rgba(255,255,255,0.7);
   margin-bottom: 18px;
 }
 
 .hero-name {
   font-family: 'Playfair Display', serif;
-  font-size: 48px; font-weight: 700;
-  color: #fff; line-height: 1.05; margin-bottom: 6px;
+  font-size: 58px; font-weight: 700;
+  color: #FDF6EC; line-height: 1.05; margin-bottom: 6px;
 }
 
 .hero-sub {
-  font-size: 11px; color: rgba(255,255,255,0.65);
+  font-size: 13px; color: rgba(255,255,255,0.6);
   letter-spacing: 0.08em; font-weight: 300; margin-bottom: 24px;
 }
 
 .hero-pills { display: flex; flex-wrap: wrap; gap: 7px; }
 .pill {
-  background: rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.25);
-  padding: 4px 12px; font-size: 11px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 5px 14px; font-size: 13px;
   color: rgba(255,255,255,0.85);
   border-radius: 100px; font-weight: 300;
 }
 
 .hero-right {
-  background: #1A1A1A;
+  background: #FAF6EF;
   display: flex; flex-direction: column;
+  border: 1px solid #D9C9B0;
 }
 
 /* ── MAIN PHOTO ── */
 .photo-box {
   flex: 1;
-  background: #2A2218;
+  background: #EDE4D3;
   display: flex; align-items: center; justify-content: center;
   position: relative; min-height: 180px;
   overflow: hidden; cursor: pointer;
@@ -93,73 +106,75 @@ body {
 }
 .photo-box img + .upload-hint { opacity: 0; }
 .photo-box:hover .upload-hint,
-.photo-box:active .upload-hint { opacity: 1 !important; background: rgba(0,0,0,0.55); }
-.upload-icon { font-size: 22px; color: #B8860B; }
-.photo-label { font-size: 10px; color: #888; letter-spacing: 0.1em; text-transform: uppercase; }
+.photo-box:active .upload-hint { opacity: 1 !important; background: rgba(237,228,211,0.85); }
+.upload-icon { font-size: 22px; color: #9A6F2E; }
+.photo-label { font-size: 10px; color: #A08C74; letter-spacing: 0.1em; text-transform: uppercase; }
 
 .photo-corner {
   position: absolute; width: 16px; height: 16px;
-  border-color: #B8860B; border-style: solid; z-index: 2;
+  border-color: #9A6F2E; border-style: solid; z-index: 2;
 }
 .photo-corner.tl { top: 8px; left: 8px; border-width: 1.5px 0 0 1.5px; }
 .photo-corner.tr { top: 8px; right: 8px; border-width: 1.5px 1.5px 0 0; }
 .photo-corner.bl { bottom: 8px; left: 8px; border-width: 0 0 1.5px 1.5px; }
 .photo-corner.br { bottom: 8px; right: 8px; border-width: 0 1.5px 1.5px 0; }
 
-.vitals { padding: 14px 16px; border-top: 1px solid #2A2A2A; }
+.vitals { padding: 14px 16px; border-top: 1px solid #D9C9B0; }
 .vital-row {
   display: flex; justify-content: space-between; align-items: baseline;
-  padding: 4px 0; border-bottom: 1px solid #1E1E1E;
+  padding: 4px 0; border-bottom: 1px solid #EDE4D3;
 }
 .vital-row:last-child { border-bottom: none; }
-.vital-key { font-size: 9px; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
-.vital-val { font-size: 11.5px; color: #F0EAE0; font-weight: 400; }
+.vital-key { font-size: 11px; letter-spacing: 0.1em; color: #A08C74; text-transform: uppercase; }
+.vital-val { font-size: 14px; color: #2C1F0E; font-weight: 400; }
 
 /* ── ABOUT ── */
 .about-band {
-  background: #1C1409; border-left: 4px solid #B8860B;
-  padding: 28px 24px; margin-bottom: 2px;
+  background: #FAF6EF; border-left: 4px solid #B8860B;
+  padding: 28px 28px; margin-bottom: 3px;
+  border: 1px solid #D9C9B0; border-left: 4px solid #B8860B;
 }
 .about-band blockquote {
   font-family: 'Playfair Display', serif;
-  font-size: 16px; font-style: italic;
-  color: #D4B87A; line-height: 1.75;
+  font-size: 19px; font-style: italic;
+  color: #6B5640; line-height: 1.75;
 }
 .about-tag {
-  font-size: 10px; letter-spacing: 0.15em;
-  color: #555; text-transform: uppercase; margin-bottom: 12px;
+  font-size: 12px; letter-spacing: 0.15em;
+  color: #A08C74; text-transform: uppercase; margin-bottom: 12px;
 }
 
 /* ── GRID BODY ── */
 .grid-body {
   display: grid; grid-template-columns: 1fr 1fr 1fr;
-  gap: 2px; margin-bottom: 2px;
+  gap: 3px; margin-bottom: 3px;
 }
 
-.block { background: #141414; padding: 22px 20px; }
-.block.accent { background: #111009; border-left: 3px solid #B8860B; }
-.block.dark { background: #0A0A0A; }
+.block { background: #FAF6EF; padding: 22px 20px; border: 1px solid #D9C9B0; }
+.block.accent { background: #F5EFE4; border-left: 3px solid #B8860B; }
+.block.dark { background: #EDE4D3; }
 
-.block-num { font-size: 9px; color: #B8860B; letter-spacing: 0.15em; margin-bottom: 10px; font-weight: 500; }
-.block-title { font-family: 'Playfair Display', serif; font-size: 15px; color: #F0EAE0; margin-bottom: 12px; font-style: italic; }
+.block-num { font-size: 11px; color: #B8860B; letter-spacing: 0.15em; margin-bottom: 10px; font-weight: 500; }
+.block-title { font-family: 'Playfair Display', serif; font-size: 18px; color: #2C1F0E; margin-bottom: 12px; font-style: italic; }
 
 ul.clean { list-style: none; }
 ul.clean li {
-  font-size: 12px; color: #888; line-height: 1.7;
+  font-size: 14px; color: #6B5640; line-height: 1.8;
   font-weight: 300; display: flex; gap: 7px;
 }
-ul.clean li::before { content: '—'; color: #B8860B; font-size: 10px; margin-top: 2px; flex-shrink: 0; }
+ul.clean li::before { content: '—'; color: #B8860B; font-size: 12px; margin-top: 2px; flex-shrink: 0; }
 
 /* ── PHOTO GALLERY ── */
 .gallery-row {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 2px; margin-bottom: 2px; height: 220px;
+  gap: 3px; margin-bottom: 3px; height: 220px;
 }
 
 .gallery-slot {
-  position: relative; background: #1A1510;
+  position: relative; background: #EDE4D3;
   overflow: hidden; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
+  border: 1px solid #D9C9B0;
 }
 .gallery-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .gallery-slot .upload-hint {
@@ -170,15 +185,15 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 10px; margin-to
 }
 .gallery-slot img + .upload-hint { opacity: 0; }
 .gallery-slot:hover .upload-hint,
-.gallery-slot:active .upload-hint { opacity: 1 !important; background: rgba(0,0,0,0.6); }
+.gallery-slot:active .upload-hint { opacity: 1 !important; background: rgba(237,228,211,0.88); }
 
-.slot-label { font-size: 10px; letter-spacing: 0.12em; color: #555; text-transform: uppercase; }
-.slot-icon { font-size: 24px; color: #B8860B; opacity: 0.7; }
-.slot-sub { font-size: 9px; color: #444; letter-spacing: 0.06em; }
+.slot-label { font-size: 10px; letter-spacing: 0.12em; color: #A08C74; text-transform: uppercase; }
+.slot-icon { font-size: 24px; color: #9A6F2E; opacity: 0.7; }
+.slot-sub { font-size: 9px; color: #A08C74; letter-spacing: 0.06em; }
 
 .gallery-corner {
   position: absolute; width: 15px; height: 15px;
-  border-color: #B8860B; border-style: solid; opacity: 0.6; z-index: 2;
+  border-color: #9A6F2E; border-style: solid; opacity: 0.5; z-index: 2;
 }
 .gallery-corner.tl { top: 8px; left: 8px; border-width: 1px 0 0 1px; }
 .gallery-corner.tr { top: 8px; right: 8px; border-width: 1px 1px 0 0; }
@@ -187,34 +202,35 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 10px; margin-to
 
 .slot-tag {
   position: absolute; bottom: 0; left: 0; right: 0;
-  background: rgba(184,134,11,0.85); padding: 5px 12px;
+  background: rgba(154,111,46,0.88); padding: 5px 12px;
   font-size: 9px; letter-spacing: 0.12em;
-  color: rgba(0,0,0,0.75); text-transform: uppercase;
+  color: #FDF6EC; text-transform: uppercase;
   font-weight: 500; z-index: 3;
   transform: translateY(100%); transition: transform 0.25s ease;
 }
 .gallery-slot:hover .slot-tag { transform: translateY(0); }
 
 /* ── WIDE ROW ── */
-.wide-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+.wide-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 3px; }
 
-.block-body { font-size: 12px; line-height: 1.8; color: #888; font-weight: 300; }
-.block-body strong { color: #C4A85A; font-weight: 500; }
+.block-body { font-size: 14px; line-height: 1.8; color: #6B5640; font-weight: 300; }
+.block-body strong { color: #9A6F2E; font-weight: 500; }
 
 /* ── EXPECTATIONS ── */
 .expect-band {
-  background: #0F0F0F; padding: 28px 24px;
-  margin-bottom: 2px;
+  background: #F5EFE4; padding: 28px 28px;
+  margin-bottom: 3px;
   display: grid; grid-template-columns: 140px 1fr;
   gap: 28px; align-items: start;
+  border: 1px solid #D9C9B0;
 }
 .expect-label {
   font-family: 'Playfair Display', serif;
-  font-size: 26px; color: #B8860B; line-height: 1.2; font-style: italic;
+  font-size: 30px; color: #9A6F2E; line-height: 1.2; font-style: italic;
 }
 .expect-body {
-  font-size: 12.5px; line-height: 1.9; color: #888; font-weight: 300;
-  padding-top: 6px; border-top: 1px solid #2A2A2A;
+  font-size: 14px; line-height: 1.9; color: #6B5640; font-weight: 300;
+  padding-top: 6px; border-top: 1px solid #D9C9B0;
 }
 
 /* ── FOOTER ── */
@@ -225,13 +241,11 @@ ul.clean li::before { content: '—'; color: #B8860B; font-size: 10px; margin-to
 }
 .footer-name {
   font-family: 'Playfair Display', serif;
-  font-size: 14px; color: rgba(0,0,0,0.7); font-style: italic;
+  font-size: 16px; color: rgba(255,255,255,0.85); font-style: italic;
 }
-.footer-note { font-size: 10px; color: rgba(0,0,0,0.5); letter-spacing: 0.08em; }
+.footer-note { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; }
 
 input[type="file"] { display: none; }
-
-
 
 @media print {
   body { background: white; padding: 0; }
@@ -307,7 +321,7 @@ input[type="file"] { display: none; }
       <ul class="clean">
         <li>Fitness &amp; Wellness</li>
         <li>Music — Plays Flute</li>
-        <li>Exploring New Places</li>
+        <li>Exploring — Treks, Temples &amp; Beyond</li>
       </ul>
     </div>
     <div class="block dark">
@@ -356,11 +370,11 @@ input[type="file"] { display: none; }
       <div class="block-num">05 · FAMILY</div>
       <div class="block-title">Family Details</div>
       <ul class="clean">
-        <li><span><strong style="color:#C4A85A;">Father</strong> — Nagaraj S</span></li>
-        <li><span><strong style="color:#C4A85A;">Mother</strong> — Poornima K M</span></li>
-        <li><span><strong style="color:#C4A85A;">Based in</strong> — Bengaluru</span></li>
-        <li><span><strong style="color:#C4A85A;">Type</strong> — Nuclear Family</span></li>
-        <li><span><strong style="color:#C4A85A;">Siblings</strong> — None</span></li>
+        <li><span><strong style="color:#9A6F2E;">Father</strong> — Nagaraj S</span></li>
+        <li><span><strong style="color:#9A6F2E;">Mother</strong> — Poornima K M</span></li>
+        <li><span><strong style="color:#9A6F2E;">Based in</strong> — Bengaluru</span></li>
+        <li><span><strong style="color:#9A6F2E;">Type</strong> — Nuclear Family</span></li>
+        <li><span><strong style="color:#9A6F2E;">Siblings</strong> — None</span></li>
       </ul>
     </div>
     <div class="block accent" style="padding: 24px 20px;">
